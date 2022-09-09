@@ -11,9 +11,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
-
-        // TODO: set content view with viewbinding
-        setContentView(R.layout.activity_main)
+        setContentView(view)
 
         // TODO: set navigation component
 
