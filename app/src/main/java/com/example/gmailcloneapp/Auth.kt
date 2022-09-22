@@ -26,7 +26,7 @@ class AuthFragment : Fragment() {
        // }
         binding.Button.setOnClickListener { findNavController().navigate(R.id.action_authFragment_to_mailsFragment)
     }
-        return view
+        return binding.root
 
 
     }
