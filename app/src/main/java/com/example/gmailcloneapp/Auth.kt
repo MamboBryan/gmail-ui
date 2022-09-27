@@ -7,7 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import androidx.navigation.Navigation.findNavController
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.example.gmailcloneapp.databinding.ActivityMainBinding
 import com.example.gmailcloneapp.databinding.FragmentAuthBinding
@@ -21,15 +23,22 @@ class AuthFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentAuthBinding.inflate(inflater, container, false)
-      //  binding.Button.setOnClickListener {
-         //   findNavController().navigate(Button)
-       // }
-        binding.Button.setOnClickListener { findNavController().navigate(R.id.action_authFragment_to_mailsFragment)
-    }
         return binding.root
 
 
+
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.Button.setOnClickListener {
+            val action = AuthFragmentDirections.actionAuthFragmentToMailsFragment()
+            findNavController().navigate(action)
+        }
     }
 
 
 }
+
+
+
